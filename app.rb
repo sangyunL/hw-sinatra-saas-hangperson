@@ -56,20 +56,20 @@ class HangpersonApp < Sinatra::Base
   get '/show' do
     ### YOUR CODE HERE ###
     @game.word_with_guesses
-      redirect '/win' if @game.check_win_or_lose == :win
-      redirect '/lose' if @game.check_win_or_lose == :lose
+      redirect '/show' if @game.check_win_or_lose == :win
+      redirect '/show' if @game.check_win_or_lose == :lose
       erb :show # You may change/remove this line
   end
   
   get '/win' do
     ### YOUR CODE HERE ###
-    redirect '/show' if @game.check_win_or_lose == !:win
+    redirect '/show' if @game.check_win_or_lose != :win
     erb :win
   end  
   
   get '/lose' do
     ### YOUR CODE HERE ###
-    redirect '/show' if @game.check_win_or_lose == !:lose
+    redirect '/show' if @game.check_win_or_lose != :lose
     erb :lose
   end
   

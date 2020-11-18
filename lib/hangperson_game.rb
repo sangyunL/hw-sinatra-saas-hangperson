@@ -10,7 +10,7 @@ class HangpersonGame
   attr_accessor :word, :guesses, :wrong_guesses
    
   def initialize(word)  
-    @word = "school"        #초기화 word:정답 
+    @word = word       #초기화 word:정답 
     @guesses=''         #guesses : 예상한것 알파벳 목록
     @wrong_guesses=''   #wrong_guesses : 틀린 알파벳 목
   end
@@ -21,7 +21,7 @@ class HangpersonGame
   
   def guess(letter)
     raise ArgumentError if letter=="" || letter==nil || !letter.match(/[A-Za-z]/)
-  
+    #return true if letter=="" || letter==nil || !letter.match(/[A-Za-z]/)
     letter.downcase!
     if @word.include? letter
       if not @guesses.include? letter
@@ -64,7 +64,7 @@ class HangpersonGame
   def self.get_random_word
     require 'uri'
     require 'net/http'
-    uri = URI('http://watchout4snakes.com/wo4snakes/Random/RandomWord')
+    uri = URI('http://watchout4snakes.com/Random/RandomWord')
     Net::HTTP.new('watchout4snakes.com').start { |http|
       return http.post(uri, "").body
     }

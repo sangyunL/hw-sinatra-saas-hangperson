@@ -1,5 +1,27 @@
-Script started on Mon 16 Nov 2020 12:53:37 AM UTC
-[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ clearbundle exec rackup -p 8080clear[Kbundle exec rackup -p 8080[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcucumber features/guess.feature [K
+Script started on Wed 18 Nov 2020 12:53:20 AM UTC
+[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ clearscript[2Pexitcucumber features/g.feature lear[Kucumber features/start_new_game.feature repeated_guess[C[C[C[C[C[C[C[C[C[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4P[C[C[C[C[C[C[C[C[C[8@ame_over[C[C[C[C[C[C[C[C[C
+Feature: game over
+  
+  As a player playing Hangperson
+  So I can get back to my life 
+  I want to know when the game is over
+
+  Scenario: game over because I guess the word[90m   # features/game_over.feature:7[0m
+    [32mGiven I start a new game with word "[32m[1mfoobar[0m[0m[32m"[90m  # features/step_definitions/game_steps.rb:12[0m[0m
+    [32mWhen I make the following guesses:[32m[1m f,o,b,a,r[0m[0m[32m[90m # features/step_definitions/game_steps.rb:25[0m[0m
+    [32mThen I should see "[32m[1mYou Win![0m[0m[32m"[90m                 # features/step_definitions/game_steps.rb:71[0m[0m
+
+  Scenario: game over because I run out of guesses[90m # features/game_over.feature:13[0m
+    [32mGiven I start a new game with word "[32m[1mzebra[0m[0m[32m"[90m     # features/step_definitions/game_steps.rb:12[0m[0m
+    [32mWhen I make the following guesses:[32m[1m t,u,v,w,x,y[0m[0m[32m[90m # features/step_definitions/game_steps.rb:25[0m[0m
+    [32mAnd I guess "[32m[1md[0m[0m[32m"[90m                                # features/step_definitions/game_steps.rb:19[0m[0m
+    [32mThen I should see "[32m[1mSorry, you lose![0m[0m[32m"[90m           # features/step_definitions/game_steps.rb:71[0m[0m
+
+2 scenarios ([32m2 passed[0m)
+7 steps ([32m7 passed[0m)
+0m0.141s
+Coverage report generated for Cucumber Features to /home/ec2-user/environment/ruby-hangman/hw-sinatra-saas-hangperson/coverage. 72 / 77 LOC (93.51%) covered.
+[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ cucumber features/game_over.feature lear[Kscript[1Pclearscript[2Pexitcucumber features/g.feature lear[Kucumber features/start_new_game.feature repeated_guess[C[C[C[C[C[C[C[C[C[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C
 Feature: guess correct letter
   
   As a player playing Hangperson
@@ -24,100 +46,62 @@ Feature: guess correct letter
   Scenario: multiple correct and incorrect guesses[90m # features/guess.feature:25[0m
     [32mGiven I start a new game with word "[32m[1mfoobar[0m[0m[32m"[90m    # features/step_definitions/game_steps.rb:12[0m[0m
     [32mWhen I make the following guesses:[32m[1m a,z,x,o[0m[0m[32m[90m     # features/step_definitions/game_steps.rb:25[0m[0m
-    [31mThen the word should read "[31m[1m-oo-a-[0m[0m[31m"[90m             # features/step_definitions/game_steps.rb:33[0m[0m
-[31m      expected to find text "-oo-a-" in "ang=\"en-us\">\nHangperson\nPlay Hangperson!\nRandom word generator provided by Watchout4snakes.com\nYou have already used that letter.\nWrong Guesses: azx\nWord so far: ---oo-\nGuess a letter:" (RSpec::Expectations::ExpectationNotMetError)[0m
-[31m      ./features/step_definitions/game_steps.rb:34:in `/^the word should read "(.*)"$/'[0m
-[31m      features/guess.feature:29:in `Then the word should read "-oo-a-"'[0m
-    [36mAnd the wrong guesses should include:[36m[1m z,x[0m[0m[36m[90m      # features/step_definitions/game_steps.rb:37[0m[0m
+    [32mThen the word should read "[32m[1m-oo-a-[0m[0m[32m"[90m             # features/step_definitions/game_steps.rb:33[0m[0m
+    [32mAnd the wrong guesses should include:[32m[1m z,x[0m[0m[32m[90m      # features/step_definitions/game_steps.rb:37[0m[0m
 
-[31mFailing Scenarios:[0m
-[31mcucumber features/guess.feature:25[0m[90m # Scenario: multiple correct and incorrect guesses[0m
-
-4 scenarios ([31m1 failed[0m, [32m3 passed[0m)
-13 steps ([31m1 failed[0m, [36m1 skipped[0m, [32m11 passed[0m)
-0m0.167s
+4 scenarios ([32m4 passed[0m)
+13 steps ([32m13 passed[0m)
+0m0.134s
 Coverage report generated for Cucumber Features to /home/ec2-user/environment/ruby-hangman/hw-sinatra-saas-hangperson/coverage. 64 / 77 LOC (83.12%) covered.
-[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ cucumber features/guess.feature[K[K[K[K[K[K[K[K[K[K[K[K[Kgame_over.gr[K[Kfeatue[Kre
-Feature: game over
+[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ cucumber features/guess.feature [4@ame_over[C[C[C[C[C[C[C[C[Clear[Kscript[2Pexitcucumber features/g.feature lear[Kucumber features/start_new_game.feature repeated_guess[C[C[C[C[C[C[C[C[C
+Feature: guess repeated letter
   
   As a player playing Hangperson
-  So I can get back to my life 
-  I want to know when the game is over
+  So that I can avoid wasting guesses on letters I've already tried
+  I want to be informed when I guess a letter I've already tried
 
-  Scenario: game over because I guess the word[90m   # features/game_over.feature:7[0m
-    [32mGiven I start a new game with word "[32m[1mfoobar[0m[0m[32m"[90m  # features/step_definitions/game_steps.rb:12[0m[0m
-    [32mWhen I make the following guesses:[32m[1m f,o,b,a,r[0m[0m[32m[90m # features/step_definitions/game_steps.rb:25[0m[0m
-    [31mThen I should see "[31m[1mYou Win![0m[0m[31m"[90m                 # features/step_definitions/game_steps.rb:71[0m[0m
-[31m      expected to find text "You Win!" in "ang=\"en-us\">\nHangperson\nPlay Hangperson!\nRandom word generator provided by Watchout4snakes.com\nYou have already used that letter.\nWrong Guesses: fbar\nWord so far: ---oo-\nGuess a letter:" (RSpec::Expectations::ExpectationNotMetError)[0m
-[31m      ./features/step_definitions/game_steps.rb:74:in `block (2 levels) in <top (required)>'[0m
-[31m      ./features/step_definitions/game_steps.rb:7:in `with_scope'[0m
-[31m      ./features/step_definitions/game_steps.rb:72:in `/^(?:|I )should see "([^\"]*)"(?: within "([^\"]*)")?$/'[0m
-[31m      features/game_over.feature:11:in `Then I should see "You Win!"'[0m
+  Scenario: guess correct letter that I have already tried[90m # features/repeated_guess.feature:7[0m
+    [32mGiven I start a new game with word "[32m[1mbumblebee[0m[0m[32m"[90m         # features/step_definitions/game_steps.rb:12[0m[0m
+    [32mWhen I guess "[32m[1mb[0m[0m[32m"[90m                                       # features/step_definitions/game_steps.rb:19[0m[0m
+    [32mAnd I guess "[32m[1mb[0m[0m[32m" again[90m                                  # features/step_definitions/game_steps.rb:19[0m[0m
+    [32mThen the word should read "[32m[1mb--b--b--[0m[0m[32m"[90m                  # features/step_definitions/game_steps.rb:33[0m[0m
+    [32mAnd I should see "[32m[1mYou have already used that letter[0m[0m[32m"[90m   # features/step_definitions/game_steps.rb:71[0m[0m
 
-  Scenario: game over because I run out of guesses[90m # features/game_over.feature:13[0m
-    [32mGiven I start a new game with word "[32m[1mzebra[0m[0m[32m"[90m     # features/step_definitions/game_steps.rb:12[0m[0m
-    [32mWhen I make the following guesses:[32m[1m t,u,v,w,x,y[0m[0m[32m[90m # features/step_definitions/game_steps.rb:25[0m[0m
-    [32mAnd I guess "[32m[1md[0m[0m[32m"[90m                                # features/step_definitions/game_steps.rb:19[0m[0m
-    [32mThen I should see "[32m[1mSorry, you lose![0m[0m[32m"[90m           # features/step_definitions/game_steps.rb:71[0m[0m
+  Scenario: guess incorrect letter that I have already tried[90m # features/repeated_guess.feature:15[0m
+    [32mGiven I start a new game with word "[32m[1mgiraffe[0m[0m[32m"[90m             # features/step_definitions/game_steps.rb:12[0m[0m
+    [32mWhen I guess "[32m[1mz[0m[0m[32m"[90m                                         # features/step_definitions/game_steps.rb:19[0m[0m
+    [32mAnd I guess "[32m[1mz[0m[0m[32m" again[90m                                    # features/step_definitions/game_steps.rb:19[0m[0m
+    [32mThen the word should read "[32m[1m-------[0m[0m[32m"[90m                      # features/step_definitions/game_steps.rb:33[0m[0m
+    [32mAnd I should see "[32m[1mYou have already used that letter[0m[0m[32m"[90m     # features/step_definitions/game_steps.rb:71[0m[0m
 
-[31mFailing Scenarios:[0m
-[31mcucumber features/game_over.feature:7[0m[90m # Scenario: game over because I guess the word[0m
+  Scenario: guessing an incorrect letter does not count towards guesses[90m # features/repeated_guess.feature:23[0m
+    [32mGiven I start a new game with word "[32m[1msnake[0m[0m[32m"[90m                          # features/step_definitions/game_steps.rb:12[0m[0m
+    [32mWhen I guess "[32m[1mz[0m[0m[32m" [32m[1m30[0m[0m[32m times in a row[90m                                  # features/step_definitions/game_steps.rb:46[0m[0m
+    [32mThen I should be on [32m[1mthe show page[0m[0m[32m[90m                                   # features/step_definitions/game_steps.rb:62[0m[0m
 
-2 scenarios ([31m1 failed[0m, [32m1 passed[0m)
-7 steps ([31m1 failed[0m, [32m6 passed[0m)
-0m0.142s
-Coverage report generated for Cucumber Features to /home/ec2-user/environment/ruby-hangman/hw-sinatra-saas-hangperson/coverage. 68 / 77 LOC (88.31%) covered.
-[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ clear
-[H[J[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ [K[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ [K[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ clear
-[H[J[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ wha[K[K[Kaht[K[K[K
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:14 ...
-
-The system is going down for halt in 30 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:29 ...
-
-The system is going down for halt in 15 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:35 ...
-
-The system is going down for halt in 9 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:36 ...
-
-The system is going down for halt in 8 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:37 ...
-
-The system is going down for halt in 7 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:38 ...
-
-The system is going down for halt in 6 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:39 ...
-
-The system is going down for halt in 5 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:40 ...
-
-The system is going down for halt in 4 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:41 ...
-
-The system is going down for halt in 3 minutes!
-
-Broadcast message from root@ip-172-31-41-249
-	(unknown) at 1:42 ...
-
-The system is going down for halt in 2 minutes!
-
-Broadcast message
+3 scenarios ([32m3 passed[0m)
+13 steps ([32m13 passed[0m)
+0m0.226s
+Coverage report generated for Cucumber Features to /home/ec2-user/environment/ruby-hangman/hw-sinatra-saas-hangperson/coverage. 64 / 77 LOC (83.12%) covered.
+[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ cucumber features/repeated_guess.feature [9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4@ame_over[C[C[C[C[C[C[C[C[Clear[Kscript[2Pexitcucumber features/g.feature lear[Kucumber features/start_new_game.feature 
+Feature: start new game
+  
+  As a player
+  So I can play Hangperson
+  I want to start a new game
+
+  Scenario: I start a new game[90m         # features/start_new_game.feature:7[0m
+    [32mGiven I am on [32m[1mthe home page[0m[0m[32m[90m        # features/step_definitions/game_steps.rb:58[0m[0m
+    [32mAnd I press "[32m[1mNew Game[0m[0m[32m"[90m             # features/step_definitions/game_steps.rb:81[0m[0m
+    [32mThen I should see "[32m[1mGuess a letter[0m[0m[32m"[90m # features/step_definitions/game_steps.rb:71[0m[0m
+    [32mAnd I press "[32m[1mNew Game[0m[0m[32m"[90m             # features/step_definitions/game_steps.rb:81[0m[0m
+    [32mThen I should see "[32m[1mGuess a letter[0m[0m[32m"[90m # features/step_definitions/game_steps.rb:71[0m[0m
+
+1 scenario ([32m1 passed[0m)
+5 steps ([32m5 passed[0m)
+0m0.080s
+Coverage report generated for Cucumber Features to /home/ec2-user/environment/ruby-hangman/hw-sinatra-saas-hangperson/coverage. 50 / 77 LOC (64.94%) covered.
+[01;32mvocstartsoft[00m:[01;34m~/environment/ruby-hangman/hw-sinatra-saas-hangperson[00m (master) $ exit
+exit
+
+Script done on Wed 18 Nov 2020 12:54:00 AM UTC
